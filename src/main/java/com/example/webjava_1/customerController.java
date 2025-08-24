@@ -5,44 +5,38 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 
+@WebServlet(name = "CustomerController", urlPatterns = {"/customer"})
+public class customerController extends HttpServlet {
 
-@WebServlet("/customer")
-public class customerController extends HttpServlet{
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        String action = request.getParameter("action");
-
-        if ("back".equals(action)) {
-            // Lấy dữ liệu từ session (cách phổ biến)
-            customerInfo customer = (customerInfo) request.getSession().getAttribute("customer");
-
-            // Gửi lại dữ liệu về form
-            request.setAttribute("customer", customer);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        } else {
-            // logic khác (ví dụ hiển thị form mặc định)
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        }
+        request.setCharacterEncoding("UTF-8"); // để nhận tiếng Việt từ form
+        process(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //Lay du lieu
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Nếu bấm "Go Back" ở trang thanks.jsp
+        if ("back".equals(request.getParameter("action"))) {
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            return;
+        }
+        process(request, response);
+    }
+
+    private void process(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
         String email = request.getParameter("email");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
 
         customerInfo customer = new customerInfo(email, firstName, lastName);
-
-        request.getSession().setAttribute("customer", customer);
         request.setAttribute("customer", customer);
-        String url="/thanks.jsp";
 
-        getServletContext().getRequestDispatcher(url).forward(request, response);
+        request.getRequestDispatcher("/thanks.jsp").forward(request, response);
     }
 }
