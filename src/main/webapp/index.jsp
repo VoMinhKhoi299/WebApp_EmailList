@@ -31,10 +31,10 @@
                 <input type="date" name="dateOfBirth" max="2025-01-01"><br>
 
                 <h2>How did you hear about us?</h2>
-                <p> <input type=radio name="heardFrom" value="Search Engine" checked>Search engine
-                    <input type=radio name="heardFrom" value="Friend">Word of mouth
-                    <input type=radio name="heardFrom" value="Social Media">Social Media
-                    <input type=radio name="heardFrom" value="Other">Other</p>
+                <p> <input type=radio name="heardUs" value="Search Engine" checked>Search engine
+                    <input type=radio name="heardUs" value="Friend">Word of mouth
+                    <input type=radio name="heardUs" value="Social Media">Social Media
+                    <input type=radio name="heardUs" value="Other">Other</p>
 
                 <h2>Would you like to receive announcements about new CDs and special offers?</h2>
                 <p><input type="checkbox" id="updates" name="wantsUpdates">YES, I'd like that.</p>
@@ -49,7 +49,7 @@
                 </div>
 
                 <p>Please contact me by:
-                    <select name="contactVia">
+                    <select name="contactMe">
                         <option value="Both" selected>Email or postal mail</option>
                         <option value="Email">Email only</option>
                         <option value="Postal Mail">Postal mail only</option>

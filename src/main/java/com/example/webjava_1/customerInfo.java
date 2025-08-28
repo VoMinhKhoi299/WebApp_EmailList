@@ -7,14 +7,20 @@ import java.io.Serializable;
  */
 
 public class customerInfo implements Serializable {
-    private String email;
-    private String firstName;
-    private String lastName;
+    private final String email;
+    private final String firstName;
+    private final String lastName;
+    private final String dateOfBirth;
+    private final String heardUs;
+    private final String contactMe;
 
-    public customerInfo(String email, String firstName, String lastName) {
+    public customerInfo(String email, String firstName, String lastName, String dateOfBirth, String heardUs, String contactMe) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.heardUs = heardUs;
+        this.contactMe = contactMe;
     }
 
     public String getEmail() {
@@ -28,4 +34,8 @@ public class customerInfo implements Serializable {
     public String getLastName() {
         return lastName;
     }
+
+    public String getDateOfBirth() { return  dateOfBirth;  }
+    public String getHeardUs() { return heardUs;  }
+    public String getContactMe() { return contactMe; }
 }
