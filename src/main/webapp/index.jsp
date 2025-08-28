@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-<form action="survey" method="post">
+<form action="customer" method="post">
     <div class="header-logo">
         <img srcset="images/murachlogo.jpg" alt="Murach Logo" >
         <h2>Murach</h2>
