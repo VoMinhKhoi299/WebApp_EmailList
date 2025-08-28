@@ -20,15 +20,19 @@
     <h2>Thank You for Submitting!</h2>
 </div>
 <div class="form-body">
-    <form action="customer" method="get">
-        <h3>Your Information:</h3>
-        <p><strong>Email:</strong> <span>${customer.email}</span></p>
-        <p><strong>First Name:</strong> <span>${customer.firstName}</span></p>
-        <p><strong>Last Name:</strong> <span>${customer.lastName}</span></p>
-        <p>  </p>
-        <input type="hidden" name="action" value="back">
-        <button type="submit">Go Back</button>
-    </form>
+    <div class="main-container">
+        <form action="customer" method="get">
+            <h3>Your Information:</h3>
+            <p><strong>Email:</strong> <span>${customer.email}</span></p>
+            <p><strong>First Name:</strong> <span>${customer.firstName}</span></p>
+            <p><strong>Last Name:</strong> <span>${customer.lastName}</span></p>
+            <p>  </p>
+            <form action="" method="post">
+                <input type="hidden" name="action" value="join">
+                <input type="submit" value="Return">
+            </form>
+        </form>
+    </div>
 </div>
 </body>
 </html>
