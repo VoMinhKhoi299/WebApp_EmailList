@@ -8,7 +8,7 @@
 <body>
 <form action="customer" method="post">
     <div class="header-logo">
-        <img srcset="images/murachlogo.jpg" alt="Murach Logo" >
+        <img srcset="murachlogo.jpg" alt="Murach Logo" >
         <h2>Murach</h2>
     </div>
     <div class="header">
@@ -38,6 +38,7 @@
 
                 <h2>Would you like to receive announcements about new CDs and special offers?</h2>
                 <p><input type="checkbox" id="updates" name="wantsUpdates">YES, I'd like that.</p>
+
                 <!-- Khối ẩn -->
                 <div id="extraInfo" style="display:none; margin-left:2rem;">
                     <p>

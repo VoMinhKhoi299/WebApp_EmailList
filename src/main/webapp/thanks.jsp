@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="header">
-    <img src="src/main/webapp/k-high-resolution-logo-transparent.png" alt="Logo" class="logo">
+    <img src="murachlogo.jpg" alt="Logo" class="logo">
     <h2>Thank You for Submitting!</h2>
 </div>
 <div class="form-body">
@@ -27,8 +27,7 @@
             <p><strong>First Name:</strong> <span>${customer.firstName}</span></p>
             <p><strong>Last Name:</strong> <span>${customer.lastName}</span></p>
             <p>  </p>
-            <form action="" method="post">
-                <input type="hidden" name="action" value="join">
+            <form action="" method="get">
                 <input type="submit" value="Return">
             </form>
         </form>

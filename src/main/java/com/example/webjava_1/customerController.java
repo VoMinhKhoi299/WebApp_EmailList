@@ -13,7 +13,6 @@ public class customerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
         process(request, response);
     }
 
@@ -40,5 +39,3 @@ public class customerController extends HttpServlet {
         request.getRequestDispatcher("/thanks.jsp").forward(request, response);
     }
 }
-
-
