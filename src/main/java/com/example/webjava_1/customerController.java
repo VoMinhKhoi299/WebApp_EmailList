@@ -13,14 +13,14 @@ public class customerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8"); // để nhận tiếng Việt từ form
+        request.setCharacterEncoding("UTF-8");
         process(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Nếu bấm "Go Back" ở trang thanks.jsp
+
         if ("back".equals(request.getParameter("action"))) {
             request.getRequestDispatcher("/index.jsp").forward(request, response);
             return;
@@ -40,3 +40,5 @@ public class customerController extends HttpServlet {
         request.getRequestDispatcher("/thanks.jsp").forward(request, response);
     }
 }
+
+
